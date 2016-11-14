@@ -21,6 +21,7 @@ class Print inherits IO {
 
 class A {
 	a : Int <- 14;
+	c : Int <- 21;
 	foo(a : Int, b : Int, c : Int) : Int {c};
 	bar(a : Int, b : Int) : Int {b};
 	baz() : Int {a};
@@ -30,6 +31,7 @@ class B inherits A {
 	foo(a : Int, b : Int, c : Int) : Int {a};
 	inc() : Int {b <- b + 1};
 	baz() : Int {b};
+	asdf() : Int {c};
 };
 class C {
 	a : Int <- 18;
@@ -42,7 +44,7 @@ class Main {
 	nop : Object;
 	b : A <- new B;
 	a : A <- new A;
-	c : B <- new B;
+	b2 : B <- new B;
 	main() : Object {{
 		p.print("0's:");
 		p.print(false);
@@ -57,7 +59,7 @@ class Main {
 		p.print(5 <= 5);
 		p.print("\n");
 
-		p.print("2 to 20");
+		p.print("2 to 21");
 		p.print("2");
 		p.print(1 + 2);
 		p.print(4);
@@ -78,12 +80,13 @@ class Main {
 		p.print(b.foo(12, 0, 0));
 		p.print(b@A.foo(0, 0, 13));
 		p.print(a.baz());
-		p.print({c.inc(); c.baz();});
+		p.print({b2.inc(); b2.baz();});
 		p.print(16 + let val : Int <- 0 in val);	
 		p.print(let a : Int <- 10, b : Int <- 7 in a + b);
 		p.print((new C).getA());
 		p.print(val <- 19);
 		p.print(val + 1);
+		p.print(b2.asdf());
 		p.print("\n");
 		
 		p.print("0 to 20");
