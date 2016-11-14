@@ -115,7 +115,7 @@ class Array inherits IO {
 class Main inherits IO {
 	a : TwoDArray <- new TwoDArray;
 	main() : Object {{
-		let i : Int <- 0, max : Int <- 75 in {
+		let i : Int <- 0, max : Int <- 20 in {
 		a <- a.newArray(max, max);
 		while i < max loop {
 			a.setInd(i, i, i);
