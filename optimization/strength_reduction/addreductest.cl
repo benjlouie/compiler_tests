@@ -9,5 +9,7 @@ class Main inherits IO {
 	out_string(" = 4 not reduced\n");
 	out_int(2+~2);
 	out_string(" = 0 not reduced\n");
+	out_int(5+5);
+	out_string(" = 10 reduced\n");
   }};
 } ; 
