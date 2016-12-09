@@ -9,7 +9,7 @@ class Main inherits IO {
                     out_int(b);
                     out_string("\n");
                 } fi;
-                a <- a - 1;
+                a <- a + 1;
             } pool
     };
 };
